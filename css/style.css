@@ -1,0 +1,136 @@
+*{
+    margin: 1px;
+    padding: 1px
+    ;
+}
+nav {
+    background: rgba(248, 247, 247, 0.185);
+    padding: 25px 10px;
+    width: 100%;
+    z-index: 10;  
+    
+
+}
+#sobreNav{
+    background: black;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+}
+#imgRedes{
+    width: 120px;
+    height: 75px ;
+}
+
+#imgLogo{
+    width: 120px;
+    height: 75px;
+}
+#positionNav{
+    position: relative;
+    left: 30%;
+    bottom: 20%;
+}
+#positionBoton{
+    position: absolute;
+    left: 1050px;
+    top: 170px;
+    
+}
+.boton{
+    background: rgb(2, 172, 2);
+    padding: 10px;
+    border-radius: 15%;
+    color: white;
+    
+}
+.boton1{
+    background: rgb(2, 172, 2);
+    padding: 17px;
+    border-radius: 15%;
+    color: white;
+    font-size: 20px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0px 5px;
+  }
+
+  nav a:hover {
+      color: red;  
+  }
+  footer {
+    background: rgb(51, 50, 50);
+    padding: 25px 10px;
+    color:white;
+    text-align: center;
+  }
+  .navfooter{
+      text-decoration: none;
+      color: white;
+        }
+
+
+    .h1Pos{
+        color: white;
+        position: absolute;
+        top: 300px;
+        left: 230px;
+        width: 300px;
+        height: 300px;
+        font-size: 70px;
+        
+    }
+    #botonTit{
+        position: absolute;
+        top: 700px;
+        left: 800px;
+        size: 300px;
+    }
+    #tamanioImg{
+        width: 100%;
+    }
+    .carrusel{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: darkgreen;
+        padding: 10px;
+        
+        
+    }
+    ul, li {
+        list-style: none;
+    }
+    ul.carrusel li{
+        position: relative;
+        animation: slider 10s infinite;
+        width: inherit;
+        height: inherit;
+        background: darkgreen;
+        transition: opacity .5s;
+     
+    }
+    #beneficios{
+
+        width: 100px;
+        height: 150px;
+        display: flex;
+        justify-content: space-around;
+        background: white;
+        background-size: 100%;
+        
+        color: black;
+        z-index: 1;
+        
+        border-radius: 10%;
+    }
+    
+    .imgFondo{
+        z-index: 0;
+    }

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<?php 
+	$page = str_replace('.php','',basename($_SERVER['PHP_SELF'])); 
+	session_start();
+
+	?>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<title>TurnAPP</title>
+
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="icon" type="image/png" href="img/logo_footer.png"/>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"></script>
+
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+
+</head>
+<body style="    background-color: #f8f8f8 !important;">
+	<!-- HEADER -->
+	<header>		
+		<div class="row" style="background-color:#252528;    padding: 1rem;">
+			<div class="col-sm-6">
+				<label  class="modal-title" style="margin-left: 1rem;font-family: MontserratRegular;color: #FFF;font-size: 16px;">Email : info@lawfirm</label>
+				<label  class="modal-title" style="margin-left: 1rem;font-family: MontserratRegular;color: #FFF;font-size: 16px;">Teléfono : 00 11 22 33</label>
+			</div>
+			<div class="col-sm-6" style="    text-align: right;  padding-right: 1rem;">
+				<img src="img/logo_turn_top.png" width="auto" height="14px"  alt="">
+				<img src="img/ico_face.png" width="auto" height="19px"  style="margin-left: 1rem;" alt="">
+				<img src="img/ico_twi.png" width="auto" height="19px"  style="margin-left: 1rem;" alt="">
+				<img src="img/ico_inst.png" width="auto" height="19px" style="margin-left: 1rem;" alt="">	
+			</div>		    
+		</div>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #FFF !important; padding: 1.5rem;">
+			<img src="img/landing_logo_turnapp_header.png" width="auto" height="30px" class="d-inline-block align-top" alt="">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+				</ul>
+				<a href="#h-home" >
+				<label id="land_home" class="modal-title"  style="    cursor: pointer; margin-right: 1rem;font-family:'MontserratMedium';font-size: 14px;margin-top: .5rem; color: #000;">HOME</label>   
+					</a>
+				<a href="#h-clientes" >
+					<label id="land_clientes" class="modal-title"  style="    cursor: pointer; margin-right: 1rem;font-family:'MontserratMedium';font-size: 14px;margin-top: .5rem;color: #000; ">CLIENTES</label>   
+					</a>
+						<a href="#h-beneficios" >
+						<label id="land_beneficios" class="modal-title"  style="cursor: pointer;     margin-right: 1rem;font-family:'MontserratMedium';font-size: 14px;margin-top: .5rem; color: #000;">BENEFICIOS</label>  
+					</a> 
+						<a href="#h-contacto" >
+						<label id="land_contacto" class="modal-title"  style="  cursor: pointer;  margin-right: 1rem;font-family:'MontserratMedium';font-size: 14px;margin-top: .5rem; color: #000;">CONTACTO</label>   
+					</a>
+						<button id="land_iniciar"  onclick="iniciarSesion();" class="btn  my-2 my-sm-0" style="margin-right: 1rem;color: #FFF;border-color: #09a317;background-color:#09a317;text-transform: uppercase;font-family:MontserratSemiBold ; font-size: 12.64px;    padding: .75rem;" type="submit">
+						Iniciar sesion</button>
+					</div>
+
+				</nav>
+			</header>
+
+
+
+			<!-- PRINCIPAL  -->
+<a name="h-home" ></a>
+			<div class="row back_header">
+				<div class="row" style="    margin-top: 15vw;   margin-bottom: 15vw;  width: 95%;  margin-left: auto;" >
+					<div class="col-sm-12">
+						<label id="land_home" class="modal-title"  style="display: block; color: #FFF; font-family:'MyriadProRegular';font-size: 2.5vw;">
+						Los mejores establecimientos</label>   
+						<label id="land_home" class="modal-title"  style="    display: block; color: #FFF; font-family:'MontserratBold';font-size: 4vw;">
+							Ahora podés reservar<br> tu mesa en el mejor<br> lugar.</label>   
+							<button id="land_iniciar"  onclick="registrarse();" class="btn  my-2 my-sm-0" style="    display: block;margin-right: 1rem;color: #FFF;border-color: #09a317;background-color:#09a317;text-transform: uppercase;font-family:MontserratSemiBold ; font-size:     font-size: clamp(15px,1.5vw,25px);  margin-top: 2vw !important;" type="submit">
+							Comenzar</button>
+						</div>		   	    
+					</div>
+				</div>
+
+
+				<div class="row" style="background-color:#1f4b1a;  text-align: center;  padding-top: 1vw;  padding-bottom: 1vw;">
+					<a name="h-clientes" ></a>
+					<div class="col-sm-1">
+
+					</div>
+					<div class="col-sm-2" style="    margin-top: auto;  margin-bottom: auto;">
+						<img src="img/land_logo_1.png"  style=" padding-top: 1vw;  padding-bottom: 1vw;">
+					</div>
+					<div class="col-sm-2" style="    margin-top: auto;  margin-bottom: auto;">
+						<img src="img/land_logo_2.png"    style="  padding-top: 1vw;  padding-bottom: 1vw;">
+					</div>
+					<div class="col-sm-2" style="    margin-top: auto;  margin-bottom: auto;">
+						<img src="img/land_logo_3.png"    style="padding-top: 1vw;  padding-bottom: 1vw;">
+					</div>
+					<div class="col-sm-2" style="    margin-top: auto;  margin-bottom: auto;">
+						<img src="img/land_logo_4.png"    style="padding-top: 1vw;  padding-bottom: 1vw;">
+					</div>
+					<div class="col-sm-2" style="    margin-top: auto;  margin-bottom: auto;">
+						<img src="img/land_logo_5.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+					</div>
+					<div class="col-sm-1">
+
+					</div>			 
+				</div>
+
+<a name="h-como" ></a>
+				<div class="row" style="    margin-top: 5vw;   margin-bottom: 0;  width: 95%;     margin-right: auto; margin-left: auto;" >
+					<div class="col-sm-7">
+						<label id="land_home" class="modal-title"  style="display: block; color: #09a317; font-family:'MyriadProRegular';font-size: 2.5vw;">TURN APP</label>   
+						<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #252528; font-family:'MontserratBold';font-size: 4vw;">¿Cómo funciona</label>   
+						<label id="land_home" class="modal-title"  style="     color: #09a317; font-family:'MontserratBold';font-size: 4vw;">TURN APP?</label> 
+						<label id="land_home" class="modal-title"  style="    display: block; color: #252528; font-family:'MyriadProRegular';font-size: clamp(14px, 2vw, 22px);">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus, est id placerat feugiat, risus arcu porta tortor, nec convallis purus magna vitae justo. Suspendisse et venenatis ligula.</label> 
+
+						<div class="row" style="margin-top: max(40px,2vw);">
+							<div class="col-sm-3" style="    text-align: center;">
+								<img src="img/land_reg_nro1.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+								<img src="img/land_reg_1.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+							</div>
+							<div class="col-sm-9">
+								<label id="land_home" class="modal-title"  style="display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(16px, 4vw, 22px);">Realizás el Registro</label>   
+								<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #252528; font-family:'MyriadProRegular';font-size: clamp(16px, 4vw, 22px);">Etiam maximus, justo ut pellentesque egestas, erat sapien mollis massa, nec porta nisl quam eu arcu. Donec sit amet congue lectus</label>   
+							</div>
+						</div>
+
+						<div class="row" style="margin-top: max(40px,2vw);">
+							<div class="col-sm-3" style="    text-align: center;">
+								<img src="img/land_reg_nro2.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+								<img src="img/land_reg_2.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+							</div>
+							<div class="col-sm-9">
+								<label id="land_home" class="modal-title"  style="display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(16px, 4vw, 22px);">Personalizar</label>   
+								<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #252528; font-family:'MyriadProRegular';font-size: clamp(16px, 4vw, 22px);">Etiam maximus, justo ut pellentesque egestas, erat sapien mollis massa, nec porta nisl quam eu arcu. Donec sit amet congue lectus</label>   
+							</div>
+						</div>
+
+
+						<div class="row" style="margin-top: max(40px,2vw);">
+							<div class="col-sm-3" style="    text-align: center;">
+								<img src="img/land_reg_nro3.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+								<img src="img/land_reg_3.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+							</div>
+							<div class="col-sm-9">
+								<label id="land_home" class="modal-title"  style="display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(16px, 4vw, 22px);">Ordená y ganar reservas</label>   
+								<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #252528; font-family:'MyriadProRegular';font-size: clamp(16px, 4vw, 22px);">Etiam maximus, justo ut pellentesque egestas, erat sapien mollis massa, nec porta nisl quam eu arcu. Donec sit amet congue lectus</label>   
+							</div>
+						</div>
+					</div>		   	    
+
+					<div class="col-sm-5" style="text-align: center;    margin-top: auto;   margin-bottom: auto;">
+						<img src="img/land_como.png"    style=" padding-top: 5vw;  padding-bottom: 1vw;">
+					</div>		   	    
+				</div>
+
+
+				<div class="row" style="     width: 95%;    margin-right: auto;    margin-left: auto;    text-align: center;" >
+					<button id="land_iniciar"  onclick="registrarse();" class="btn  my-2 my-sm-0" style=" color: #FFF;
+					border-color: #09a317;    background-color: #09a317;    text-transform: uppercase;    font-family: MontserratSemiBold;
+					font-size: clamp(16px, 1.5vw, 20px);    margin: auto;">
+				Comenzar ya </button>
+			</div>
+
+<a name="h-beneficios" ></a>
+			<div class="row back_beneficios">
+				<div class="row" style="      margin: auto;  margin-top: 3vw;    width: 95%;" >
+					<div class="col-sm-2"></div>
+
+					<div class="col-sm-4" style="background-color: #09a317;    margin: 1rem;  border-radius: .5rem;">
+						<div class="row" style="margin-top: 1rem">
+							<div class="col-sm-3" style="    text-align: center;">
+								<img src="img/land_ben_res.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+							</div>
+							<div class="col-sm-9">
+								<label id="land_home" class="modal-title"  style="display: block; color: #fff; font-family:'MontserratBold';font-size: clamp(35px, 4vw, 45px);">+ 12K</label>   
+								<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #fff; font-family:'MontserratBold';font-size: clamp(16px, 4vw, 22px);">Reservas realizadas</label>   
+							</div>
+						</div>
+						<div class="row" style="      padding: 1rem;  width: 95%; margin: auto;  padding-top: 0;">
+							<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #fff; font-family:'MontserratRegular';font-size: clamp(16px, 4vw, 22px);">Excepteur sint occaecat cupidatat non proident sunt iculpa qui officia deserunt mollit anim est. laborum sed perspiciatis </label>   
+						</div>
+					</div>	
+
+					<div class="col-sm-4" style="background-color: #09a317;    margin: 1rem;   border-radius: .5rem;">
+						<div class="row" style="margin-top: 1rem;">
+							<div class="col-sm-3" style="    text-align: center;">
+								<img src="img/land_ben_usu.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;">
+							</div>
+							<div class="col-sm-9">
+								<label id="land_home" class="modal-title"  style="display: block; color: #fff; font-family:'MontserratBold';font-size: clamp(35px, 4vw, 45px);">+ 14K</label>   
+								<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #fff; font-family:'MontserratBold';font-size: clamp(16px, 4vw, 22px);">Usuarios Felices</label>   
+							</div>
+						</div>
+						<div class="row" style="      padding: 1rem;  width: 95%; margin: auto;  padding-top: 0;">
+							<label id="land_home" class="modal-title"  style="      margin-right: .5rem; color: #fff; font-family:'MontserratRegular';font-size: clamp(16px, 4vw, 22px);">Excepteur sint occaecat cupidatat non proident sunt iculpa qui officia deserunt mollit anim est. laborum sed perspiciatis </label>   
+						</div>
+					</div>		   	    
+					<div class="col-sm-2"></div>
+				</div>
+
+
+
+				<div class="row" style="      padding: 1rem;  width: 95%; margin: auto;  padding-top: 5vw;">
+					<label id="land_home" class="modal-title"  style=" text-align: center; width: 100%;     margin-right: .5rem; color: #fff; font-family:'MontserratBold';font-size: clamp(30px, 4vw, 40px);">Beneficios</label>   
+				</div>
+
+
+				<div class="row" style="      margin: auto;  margin-top: 3vw;    width: 95%;" >
+					<div class="col-sm-2"></div>
+
+					<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+						<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+							<img src="img/land_ben_1.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+							<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">Disminuí el <br>NO-SHOW</label>   
+
+							<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+						</div>				
+					</div>	
+
+					<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+						<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+							<img src="img/land_ben_2.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+							<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+								Aumenta y optimiza <br>tus reservas</label>   
+
+								<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+							</div>				
+						</div>	
+
+						<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+							<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+								<img src="img/land_ben_3.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+								<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+									Visualiza reportes <br>de tus reservas</label>   
+
+									<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+								</div>				
+							</div>	
+
+							<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+								<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+									<img src="img/land_ben_4.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+									<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+										Feedback <br>de clientes</label>   
+
+										<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+									</div>				
+								</div>	
+
+
+								<div class="col-sm-2"></div>
+							</div>
+
+
+
+							<div class="row" style="      margin: auto;  margin-top: 0;    width: 95%;" >
+								<div class="col-sm-2"></div>
+
+
+								<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+									<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+										<img src="img/land_ben_5.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+										<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+											Parametriza tu sitio <br>según tus necesidades</label>   
+
+											<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+										</div>				
+									</div>	
+
+									<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+										<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+											<img src="img/land_ben_6.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+											<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+												Conseguí tu base de <br>datos de mejores clientes</label>   
+
+												<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+											</div>				
+										</div>	
+
+										<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;  ">
+											<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+												<img src="img/land_ben_7.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+												<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+													No pagas <br>comisiones</label>   
+
+													<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+												</div>				
+											</div>	
+
+											<div class="col-sm-2" style="  margin: 1rem; padding: 1rem;    margin-bottom: 0;  ">
+												<div class="row" style="margin-top: 1rem;background-color: #fff;    border-radius: .5rem;text-align: center;    padding: 1rem;">
+													<img src="img/land_ben_8.png"    style=" padding-top: 1vw;  padding-bottom: 1vw;    margin-left: auto;  margin-right: auto;">
+
+													<label id="land_home" class="modal-title"  style="    margin-top: 1rem;    width: 100%;display: block; color: #252528; font-family:'MontserratBold';font-size: clamp(10px, 3vw, 20px);">
+														Automatiza tus <br>reservas 24/7</label>   
+
+														<label id="land_home" class="modal-title"  style="     margin-top: 1rem;      width: 100%;   margin-right: .5rem; color: #252528; font-family:'MontserratRegular';font-size: clamp(10px, 3vw, 20px);">Maecenas metus lectus, tempor nec massa sed, maximus ullamcorper lacus. </label>   
+													</div>				
+												</div>	
+
+												<div class="col-sm-2"></div>
+											</div>
+
+
+										</div>
+
+<a name="h-contacto" ></a>
+										<div class="row back_reserva">
+											<div class="row" style="    margin-top: 5vw;   margin-bottom: 15vw;  width: 95%;  margin-left: auto;" >
+												<label id="land_home" class="modal-title"  style="display: block; color: #252528; font-family:'MontserratBold';font-size: 2.5vw; margin-left: 43%;">
+												¿Estás listo para optimizar tus </label>   
+
+												<label id="land_home" class="modal-title"  style=" margin-left: 43%;   display: block; color: #09a317; font-family:'MontserratBold';font-size: 2.5vw;">
+												RESERVAS?</label>   
+
+												<div class="row" style="  margin-left: 43%;    background-color: #efefef;  border-radius: 1rem;  border-color: #FFF; border-style: double;    border-width: .5rem;    width: 50%;  max-width: fit-content;">
+													
+													<img src="img/land_ben_cont.png" style=" padding-top: 1vw;  padding-bottom: 1vw; width: min(100px,6vw);">
+
+													<div style="height: fit-content; margin-top: auto;  margin-bottom: auto;  margin-left: 1vw; margin-right: 1vw;">
+														<label id="land_home" class="modal-title"  style="display: block; color: #565656; font-family:'MontserratSemiBold';font-size: clamp(8px,2vw,18px);">
+														CONTACTANOS POR WHATSAPP</label>   
+														<label id="land_home" class="modal-title"  style=" color: #565656; font-family:'MontserratBold';font-size: clamp(8px,2vw,18px);">
+														(+00) 012 3456 789</label>   
+													</div>
+
+
+													<button id="land_iniciar"  onclick="openWhatsapp();" class="btn  my-2 my-sm-0" style="margin-right: 1rem;color: #FFF;border-color: #09a317;background-color:#09a317;text-transform: uppercase;font-family:MontserratSemiBold ; font-size: clamp(15px,1.5vw,25px);      height: fit-content; margin-top: auto !important;   margin-bottom: auto !important;" >
+													Contactanos</button>
+													
+												</div>
+
+											</div>
+										</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="registrateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="border: none; background-color: transparent;">
+
+			<div class="modal-header" style="background-color: #1f4b1a;border:none;    border-top-right-radius: 2rem; border-top-left-radius: 2rem;">
+				<label class="modal-title"  style="font-family:'MontserratBold';font-size: 20px;width: 100%;  color: #FFF;   text-align: center;">Registrar Comercio</label> 
+			</div>
+
+			<div class="modal-body" style="background-color: #1f4b1a;border:none;    padding-top: 0;border-bottom-right-radius: 2rem;  border-bottom-left-radius: 2rem;
+			padding-bottom: 0rem;    text-align: center;">
+
+
+			<div  style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center;">
+
+				<div  style="    border-color: #1f4b1a;border-style: solid;    margin-left: auto;  margin-right: auto;display: block; padding: .5rem; border-radius: 2rem;  width: 75%;  ">			<div style="width:100%;display: inline-flex;">		  					
+					<input class="modal-title" id="nombreRegistrate" placeholder="Nombre del comercio" style="outline-color: #FFF;border-style: unset;font-family:'MontserratMedium';font-size: 17px; cursor: pointer;width: 100%;"/>
+				</div>
+			</div>
+			<div   style="border-color: #1f4b1a;border-style: solid;   margin-left: auto;  margin-right: auto;display: block; padding: .5rem; border-radius: 2rem;  width: 75%;  margin-top: .5rem;">		  	
+				<div style="width:100%;display: inline-flex;">		  					
+					<input class="modal-title" id="telefonoRegistrate" placeholder="+54      Teléfono Móvil"  style="outline-color: #FFF;border-style: unset;font-family:'MontserratMedium';font-size: 17px; cursor: pointer;width: 100%;"/>
+				</div>
+			</div>
+
+			<div   style="border-color: #1f4b1a;border-style: solid;  margin-left: auto;  margin-right: auto;display: block; padding: .5rem; border-radius: 2rem;  width: 75%;  margin-top: .5rem;">  		
+				<div style="width:100%;display: inline-flex;">		  					
+					<input class="modal-title" id="emailRegistrate"  placeholder="Coreo electrónico"  style="outline-color: #FFF;border-style: unset;font-family:'MontserratMedium';font-size: 17px; cursor: pointer;width: 100%;"/>
+				</div>
+			</div>
+
+
+			<div id="div-registrar-Registrate" style="    margin-top: 1rem;">
+				<div onclick="generarRegistroMenu();"  style="background-color:#1f4b1a; display: inline-flex; padding:.5rem; border-radius: 1rem;  width: 50%;cursor: pointer;">  		
+					<div style="width:100%;">		  					
+						<label class="modal-title" style="font-family:'MontserratBold';font-size: 20px; cursor: pointer;color: #FFF;">Registrarme</label>  
+					</div>
+				</div>
+			</div>
+
+
+			<div id="div-registrando-Registrate" style="    margin-top: 1rem;display: none;">
+				<div  style="display: inline-flex; padding:.5rem; width: 50%;">  		
+					<div style="width:100%;">		  					
+						<label style="font-family:'MontserratBold';font-size: 20px; ">Registrando ...</label>  
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<img src="img/logo_blanco_turn.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;">
+	</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content" style="border: none; background-color: transparent;">
+
+
+
+													<div class="modal-body" style="background-color: #e9c54a;border:none;    padding-top: 0;border-bottom-right-radius: 2rem;  border-bottom-left-radius: 2rem;
+													padding-bottom: 0rem;    text-align: center;">
+													<div id="pasoUno" style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center;">
+														<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;">Escoja la cantidad de comensales</label>   
+
+														<div style="display: inline-flex;  margin-top: 1rem;">
+															<div onclick="continuarDos(1)" style="height:3rem;width: 3rem;border-radius: 1.5rem; background-color:#e9c54a;margin-left: 1rem;  margin-right: 1rem;cursor: pointer;">
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;margin-top: .5rem; cursor: pointer;">1</label>    
+															</div>
+
+															<div  onclick="continuarDos(2)" style="height:3rem;width: 3rem;border-radius: 1.5rem; background-color:#e9c54a;margin-left: 1rem;  margin-right: 1rem;cursor: pointer;">
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;margin-top: .5rem; cursor: pointer;">2</label>    
+															</div>
+
+															<div  onclick="continuarDos(3)" style="height:3rem;width: 3rem;border-radius: 1.5rem; background-color:#e9c54a;margin-left: 1rem;  margin-right: 1rem;cursor: pointer;">
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;margin-top: .5rem;cursor: pointer; ">3</label>    
+															</div>
+
+															<div  onclick="continuarDos(4)" style="height:3rem;width: 3rem;border-radius: 1.5rem; background-color:#e9c54a;margin-left: 1rem;  margin-right: 1rem;cursor: pointer;">
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;margin-top: .5rem; cursor: pointer; ">4</label>    
+															</div>
+														</div>
+
+														<div style="display: inline-flex;  margin-top: 1rem;">
+															<div onclick="delDias()" style="    height: 2rem; width: 2rem; border-radius: 1rem; border-color: #e9c54a; margin-left: 1rem; margin-right: 1rem; border-style: solid;margin-top: .5rem;cursor: pointer;">
+																<label  class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;cursor: pointer; ">-</label>    
+															</div>
+
+															<div onclick="continuarDos(0)" style="height:3rem;width: 3rem;border-radius: 1.5rem; background-color:#e9c54a;cursor: pointer;">
+																<label id="dias" class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;margin-top: .5rem; cursor: pointer;">5</label>    
+															</div>
+
+															<div onclick="addDias()"  style="    height: 2rem; width: 2rem; border-radius: 1rem; border-color: #e9c54a; margin-left: 1rem; margin-right: 1rem; border-style: solid;margin-top: .5rem;cursor: pointer;">
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;cursor: pointer; ">+</label>    
+															</div>
+
+														</div>
+													</div>
+
+
+
+
+
+													<div id="pasoCinco" style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center; display: none;">
+
+														<div style="display:inline-flex; width:100%; margin-top: 1rem;">
+															<div style="width:10%">
+																<div onclick="backCuatro()" style="width: 20%;    margin-top: auto; margin-bottom: auto;cursor: pointer;">
+																	<img src="img/ico_atras.png"  class="d-inline-block align-top" alt="" style="width: 30px;  height: auto;  margin-top: auto;">
+																</div>
+															</div>
+															<div style="width:80%">
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;">Registrarme con</label> 
+															</div>
+															<div style="width:10%">
+															</div>				
+														</div>
+
+
+														<div  style="    border-color: #e9c54a;border-style: solid;    margin-left: auto;  margin-right: auto;display: block; padding: .5rem; border-radius: 2rem;  width: 75%;    margin-top: 2rem;">			<div style="width:100%;display: inline-flex;">		  					
+															<input class="modal-title" id="nombre" placeholder="Nombre y Apellido" style="outline-color: #FFF;border-style: unset;font-family:'MontserratMedium';font-size: 17px; cursor: pointer;width: 100%;"/>
+														</div>
+													</div>
+													<div   style="border-color: #e9c54a;border-style: solid;   margin-left: auto;  margin-right: auto;display: block; padding: .5rem; border-radius: 2rem;  width: 75%;  margin-top: .5rem;">		  	
+														<div style="width:100%;display: inline-flex;">		  					
+															<input class="modal-title" id="telefono" placeholder="+54      Teléfono Móvil"  style="outline-color: #FFF;border-style: unset;font-family:'MontserratMedium';font-size: 17px; cursor: pointer;width: 100%;"/>
+														</div>
+													</div>
+
+													<div   style="border-color: #e9c54a;border-style: solid;  margin-left: auto;  margin-right: auto;display: block; padding: .5rem; border-radius: 2rem;  width: 75%;  margin-top: .5rem;">  		
+														<div style="width:100%;display: inline-flex;">		  					
+															<input class="modal-title" id="email"  placeholder="Coreo electrónico"  style="outline-color: #FFF;border-style: unset;font-family:'MontserratMedium';font-size: 17px; cursor: pointer;width: 100%;"/>
+														</div>
+													</div>
+
+
+													<div   style="width: 75%; margin-left: auto;margin-right: auto; margin-top: 1rem;">  		
+														<div style="width:5%;display: inline-flex;">		  					
+															<input type="checkbox" id="informacion" name="informacion"  >
+														</div>
+
+														<div style="width:70%;display: inline-flex;">		  					
+															<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratMedium';font-size: 10px;text-align: left;">Estoy de acuerdo con que el restaurante me envíe información ocasional sobre eventos especiales o celebraciones.</label> 
+														</div>
+													</div>
+
+
+
+													<div id="div-registrar" style="    margin-top: 1rem;">
+														<div onclick="generarRegistro();"  style="background-color:#e9c54a; display: inline-flex; padding:.5rem; border-radius: 2rem;  width: 50%;cursor: pointer;">  		
+															<div style="width:100%;">		  					
+																<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px; cursor: pointer;">Registrarme</label>  
+															</div>
+														</div>
+													</div>
+
+
+													<div id="div-registrando" style="    margin-top: 1rem;display: none;">
+														<div  style="display: inline-flex; padding:.5rem; width: 50%;">  		
+															<div style="width:100%;">		  					
+																<label style="font-family:'MontserratBold';font-size: 20px; ">Registrando ...</label>  
+															</div>
+														</div>
+													</div>
+
+
+												</div>
+
+
+
+												<div id="pasoSeis" style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center; display: none;">
+													<div style="display:inline-flex; width:100%; margin-top: 1rem;">
+														<div style="width:10%">
+															<div onclick="backTresPost()" style="width: 20%;    margin-top: auto; margin-bottom: auto;cursor: pointer;">
+																<img src="img/ico_atras.png"  class="d-inline-block align-top" alt="" style="width: 30px;  height: auto;  margin-top: auto;">
+															</div>
+														</div>
+														<div style="width:80%">
+															<label class="modal-title" id="exampleModalLabel" style="font-family:'MontserratBold';font-size: 20px;">Datos de la reserva</label> 
+														</div>
+														<div style="width:10%">
+														</div>				
+													</div>
+
+													<div>
+														<label class="modal-title" id="reserva_comensales" style="font-family:'MontserratSemiBold';font-size: 18px;margin-top: 2rem; "></label>  	
+													</div>
+
+													<div>
+														<label class="modal-title" id="reserva_fecha" style="font-family:'MontserratSemiBold';font-size: 18px;margin-top: 1rem; "></label>  	
+													</div>
+
+													<div>
+														<label class="modal-title" id="reserva_hora" style="font-family:'MontserratSemiBold';font-size: 18px;margin-top: 1rem; "></label>  	
+													</div>
+
+													<div>
+														<label class="modal-title" id="reserva_motivo" style="font-family:'MontserratSemiBold';font-size: 18px;margin-top: 1rem; "></label>  	
+													</div>
+
+													<div>
+														<label onclick="generarReserva();" class="modal-title" 
+														style="font-family:'MontserratBold';font-size: 20px;margin-top: 2rem; text-transform: uppercase;cursor: pointer;">
+													Confirmar reserva</label>  	
+												</div>
+
+											</div>
+
+
+
+											<img src="img/logo_blanco_turn.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;">
+										</div>
+
+
+
+
+
+
+										<div class="modal-footer" style="border:none;padding-left: 0; padding-right: 0;">
+											<div id="footerUno" style="margin-left: 0; margin-right: 0;">
+												<img src="img/footer_1.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;padding-left: 0; padding-right: 0;">	
+											</div>
+
+											<div onclick="backUno()" id="footerDos" style="display: none;margin-left: 0; margin-right: 0;">
+												<img src="img/footer_2.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;padding-left: 0; padding-right: 0;">	
+											</div>
+
+											<div onclick="backDos()" id="footerTres" style="display: none;margin-left: 0; margin-right: 0;">
+												<img src="img/footer_3.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;padding-left: 0; padding-right: 0;">	
+											</div>
+
+											<div onclick="backTres()" id="footerCuatro" style="display: none;margin-left: 0; margin-right: 0;">
+												<img src="img/footer_4.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;padding-left: 0; padding-right: 0;">	
+											</div>
+
+											<div onclick="backCuatro()"  id="footerCinco" style="display: none;margin-left: 0; margin-right: 0;">
+												<img src="img/footer_5.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;padding-left: 0; padding-right: 0;">	
+											</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="misReservasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="border: none; background-color: transparent;">
+
+			<div class="modal-header" style="background-color: #e9c54a;border:none;    border-top-right-radius: 2rem; border-top-left-radius: 2rem;">
+				<img src="img/logo2.png" width="auto" height="60px" class="d-inline-block align-top" alt="" style=" margin-left: auto; margin-right: auto;">
+
+			</div>
+
+			<div class="modal-body" style="background-color: #e9c54a;border:none;    padding-top: 0;border-bottom-right-radius: 2rem;  border-bottom-left-radius: 2rem;
+			padding-bottom: 0rem;    text-align: center;">
+
+
+			<div id="misReservasUno" style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center;">
+				<label class="modal-title" style="font-family:'MontserratBold';font-size: 20px;">Mis Reservas</label>   
+
+				<div style="    height: 20rem;   overflow-y: auto;display: inline-flex;  margin-top: 1rem;">
+					<table class="table table-striped table-borderless" id="table-usuarios">
+
+					</table>
+				</div>
+
+			</div>
+
+
+
+
+			<div id="misReservasDos" style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center; display: none;">
+				<div style="display:inline-flex; width:100%; margin-top: 1rem;">
+					<div style="width:10%">
+						<div onclick="backMisReservas()"  style="width: 20%;    margin-top: auto; margin-bottom: auto;cursor: pointer;">
+							<img src="img/ico_atras.png"  class="d-inline-block align-top" alt="" style="width: 30px;  height: auto;  margin-top: auto;">
+						</div>
+					</div>
+					<div style="width:80%">
+						<label class="modal-title"style="font-family:'MontserratBold';font-size: 20px;">Encuesta</label> 
+					</div>
+					<div style="width:10%">
+
+					</div>
+
+				</div>	
+
+				<div style="    text-align: left;   margin: 2rem;">
+					<label for="customRange2" class="form-label" style="font-family:'MontserratBold';font-size: 16px;">¿Como fue la velocidad de atencion?</label>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+						<label class="form-check-label" for="flexRadioDefault1">
+							Buena
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+						<label class="form-check-label" for="flexRadioDefault2">
+							Normal
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >
+						<label class="form-check-label" for="flexRadioDefault3">
+							Mala
+						</label>
+					</div>
+
+				</div>	
+
+
+				<div style="    text-align: left;   margin: 2rem;">
+					<label for="customRange2" class="form-label" style="font-family:'MontserratBold';font-size: 16px;">¿Como fue la amabilidad del personal?</label>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault21">
+						<label class="form-check-label" for="flexRadioDefault21">
+							Buena
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault22" checked>
+						<label class="form-check-label" for="flexRadioDefault22">
+							Normal
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault23" >
+						<label class="form-check-label" for="flexRadioDefault23">
+							Mala
+						</label>
+					</div>
+
+				</div>	
+
+
+				<div style="    text-align: left;   margin: 2rem;">
+					<label for="customRange2" class="form-label" style="font-family:'MontserratBold';font-size: 16px;">¿Como fue la calidad de su comida?</label>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault31">
+						<label class="form-check-label" for="flexRadioDefault31">
+							Buena
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault32" checked>
+						<label class="form-check-label" for="flexRadioDefault32">
+							Normal
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault33" >
+						<label class="form-check-label" for="flexRadioDefault33">
+							Mala
+						</label>
+					</div>
+
+				</div>	
+
+				<div style="    text-align: left;   margin: 2rem;">
+					<label for="customRange2" class="form-label" style="font-family:'MontserratBold';font-size: 16px;">¿Que posibilidades hay de que nos recomiende? </label>
+					<div style="width:100%">
+						<label class="form-check-label" style="width:20%;text-align: center;">Baja</label>
+						<input type="range" class="form-range" min="0" max="5" id="customRange2" style="width:55%">
+						<label class="form-check-label" style="width:20%;text-align: center;">Alta</label>
+					</div>
+					
+				</div>	
+
+
+				<div>
+					<label onclick="enviarEncuesta();" class="modal-title" 
+					style="font-family:'MontserratBold';font-size: 20px;margin-top: 2rem; text-transform: uppercase;cursor: pointer;">
+				Enviar encuesta</label>  	
+			</div>
+		</div>
+
+		<img src="img/logo_blanco_turn.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;">
+	</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="iniciarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="border: none; background-color: transparent;">
+
+			<div class="modal-header" style="background-color: #e9c54a;border:none;    border-top-right-radius: 2rem; border-top-left-radius: 2rem;">
+				<img src="img/logo2.png" width="auto" height="60px" class="d-inline-block align-top" alt="" style=" margin-left: auto; margin-right: auto;">
+
+			</div>
+
+			<div class="modal-body" style="background-color: #e9c54a;border:none;    padding-top: 0;border-bottom-right-radius: 2rem;  border-bottom-left-radius: 2rem;
+			padding-bottom: 0rem;    text-align: center;">
+
+
+
+			<div style="background-color: #FFF;padding:1.5rem;border-radius: 1rem;    text-align: center; ">
+
+				<div style="display: inline-flex;  margin-top: 2rem;">
+					<div style=" background-color: #3c5b96; height: auto;  width: 30%; border-radius: .5rem;     padding: .5rem;margin-top: auto;margin-bottom: auto;">
+						<img src="img/ico_facebook.png" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto; margin-top: auto;">
+						<label id="loginfacebookIniciar"  onclick="loginFacebookIniciar();"  style="font-family:'MontserratMedium';font-size: 15px;    color: #FFF;margin-top: .5rem; cursor: pointer;">Continuar con Facebook</label>    		
+					</div>
+
+					<div   style=" background-color:#FFF;border-color: #5f5f5f;border-style: solid;margin-left: 1rem;  margin-right: 1rem; height: auto;  width: 30%; border-radius: .5rem;  padding: .5rem;margin-top: auto;margin-bottom: auto;">
+						<img src="img/ico_google.png" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto; margin-top: auto;">
+						<label id="logingoogleIniciar" onclick="loginGoogleIniciar();"  style=" margin-top: auto;   margin-bottom: auto;font-family:'MontserratMedium';font-size: 15px;color:  #8a8a8a;margin-top: .5rem; cursor: pointer;">Continuar con Google</label>    			
+					</div>
+
+					<div class="g-signin2" style="display: none;" data-onsuccess="onSignIn"></div>
+		
+	<div  style=" background-color:#e9c54a; height: auto;  width: 30%; border-radius: .5rem;    cursor: pointer;   padding: .5rem;margin-top: auto;margin-bottom: auto;">
+		<img src="img/ico_mail.png" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto; margin-top: auto;">
+		<label class="modal-title"  style="margin-top: auto;   margin-bottom: auto;font-family:'MontserratMedium';font-size: 15px;    color: #FFF;margin-top: .5rem;cursor: pointer; ">Continuar con Email</label>    
+	</div>
+
+</div>
+
+</div>
+
+
+
+<img src="img/logo_blanco_turn.png" width="auto" height="auto" class="d-inline-block align-top" alt="" style="max-width: 100%; margin-left: auto; margin-right: auto;padding: .5rem;">
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+<!-- FOOTER -->
+<div style="background-color:#252528;    padding: 1rem;display: inline-flex; width: 100%;   padding-top: 5rem;">
+	<div style="width:50%;    margin: auto; text-align: right;display: inline-flex; margin-top: 0;">
+		<img src="img/logo_turn_bottom.png" style=" max-width: 90%;   margin: auto;"  alt="">
+	</div>
+	<div style="width:50%;    margin: auto; display: inline-flex;">
+		<div style="width:50%;    margin: auto; text-align: left;">
+			<label style="font-family:MyriadProRegular;font-size: 18.06px;color: #09a317;display: block;">Accesos</label>
+			<a href="#h-home" ><label style="font-family:MyriadProRegular;font-size: 18.06px;color: #FFF;display: block;cursor: pointer;">Home</label></a>
+			<a href="#h-como" ><label style="font-family:MyriadProRegular;font-size: 18.06px;color: #FFF;display: block;cursor: pointer;">Cómo funciona</label></a>
+			<a href="#h-beneficios" ><label style="font-family:MyriadProRegular;font-size: 18.06px;color: #FFF;display: block;cursor: pointer;">Beneficios</label></a>
+			<a href="#h-contacto" ><label style="font-family:MyriadProRegular;font-size: 18.06px;color: #FFF;display: block;cursor: pointer;">Contacto</label></a>
+		</div>
+		
+		<div style="width:50%;    margin: auto; margin-top: 0;">
+
+			<label style="font-family:MyriadProRegular;font-size: 18.06px;color: #09a317;display: block;">Seguinos</label>
+			<img src="img/ico_face_bottom.png" width="auto" height="23px"  style="margin-right: 2rem;" alt="">
+			<img src="img/ico_twi_bottom.png" width="auto" height="23px"  style="margin-right: 2rem;" alt="">
+			<img src="img/ico_inst_bottom.png" width="auto" height="23px" style="margin-right: 2rem;" alt="">
+		</div>	
+	</div>	
+
+	
+</div>
+<div style="background-color:#252528; padding-bottom: 2rem;">
+	<div style="background-color:#333337;height: 2px; width: 80%; margin: auto;"></div>		
+	<label style="font-family:MyriadProRegular;font-size: 18.06px;color: #09a317;display: block;    width: 80%; margin: auto;  margin-top: 1rem;">
+	Copyright © 2021. Todos los derechos.</label>	
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="js/script.js"></script>-->
+
+<script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" src="js/index_script.js"></script>
+
+<script type="text/javascript">
+
+
+</script>
+
+
+
+</body>
+</html>
